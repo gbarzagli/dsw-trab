@@ -1,0 +1,65 @@
+.logo {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  transform: translateY(20%);
+}
+
+body {
+  background-color: #f5f5f5;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  background-size: cover;
+  background-position: top;
+  background-image: url(../img/background.jpg);
+}
+
+header {
+  height: 40px;
+}
+
+.panel {
+  width: 98%;
+  margin: 1%;
+}
+
+.white-transparent {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* label color */
+.input-field label {
+ color: #fff;
+}
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ color: #fff;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #1ED760;
+ box-shadow: 0 1px 0 0 #1ED760;
+}
+/* valid color */
+.input-field input[type=text].valid {
+ border-bottom: 1px solid #1ED760;
+ box-shadow: 0 1px 0 0 #1ED760;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+ border-bottom: 1px solid #1ED760;
+ box-shadow: 0 1px 0 0 #1ED760;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: #1ED760;
+}
+
+.spotify-bg {
+ background-color: #1ED760;
+}
