@@ -26,7 +26,7 @@ function search() {
             }
             content += "</table>\n";
 
-            $("main > div > div.card-panel > span.white-text").html(content);
+            $("div.card-panel > span.white-text").html(content);
         }
     })
 }
