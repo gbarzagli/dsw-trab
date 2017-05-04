@@ -11,15 +11,16 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
-<body>
+<body onload="search()">
   <header>
+    <div class="row">
       <nav>
         <div class="nav-wrapper grey darken-4">
-          <a href="index.html" class="brand-logo"><img class="logo" srcset="./img/spotify-logo.svg"> Spotify Catalogue</a>
+          <a href="../index.html" class="brand-logo"><img class="logo" srcset="../img/spotify-logo.svg"> Spotify Catalogue</a>
           <form>
             <div class="input-field right">
               <input id="nav_input" type="search" required>
@@ -29,20 +30,25 @@
           </form>
         </div>
       </nav>
+    </div>
   </header>
 
   <main>
       <div class="card-panel panel">
         <span class="white-text">
-          <h3>Welcome!!!</h3>
-          <div class="input-field col s12">
-            <i class="material-icons prefix">search</i>
-            <input id="main_input" type="text">
-            <label for="main_input">Search for a music...</label>
-            <button class="btn spotify-bg waves-effect waves-light right" onclick="redirectToTracks()">Search
-              <i class="material-icons right">search</i>
-            </button>
-          </div>
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
         </span>
       </div>
   </main>
@@ -66,7 +72,7 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-  <script src="./js/scripts.js"></script>
+  <script src="../js/scripts.js"></script>
 </body>
 
 </html>

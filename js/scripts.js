@@ -1,12 +1,21 @@
-function search() {
-    console.info("function search chamado");
+/** Pega a entrada do usuario e redireciona para a página de listagem das músicas */
+function redirectToTracks() {
+    console.log("getting user input and redirecting to tracks page");
 
     var query = $("#main_input").val();
     if (query == undefined || query == '') {
         query = $("#nav_input").val();
     }
 
-    console.info("chamando spotify web api");
+    window.location.href = "./html/tracks.html?query=" + query;
+}
+
+/** Realiza a busca, método chamado ao terminar o load da página */
+function search() {
+    console.info("calling spotify web api");
+
+    var href = window.location.href;
+    var query = href.substring(href.indexOf("="));
 
     $.ajax({
         type : "GET",
