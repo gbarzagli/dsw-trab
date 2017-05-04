@@ -15,7 +15,7 @@ function search() {
     console.info("calling spotify web api");
 
     var href = window.location.href;
-    var query = href.substring(href.indexOf("="));
+    var query = href.substring(href.indexOf("=") + 1);
 
     $.ajax({
         type : "GET",
