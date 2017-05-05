@@ -78,3 +78,11 @@ div.panel > span {
 .spotify-bg {
  background-color: #1ED760;
 }
+
+.spotify-bg:focus {
+ background-color: #1ED760;
+}
+
+.spotify-bg:hover {
+ background-color: #1ED760;
+}
