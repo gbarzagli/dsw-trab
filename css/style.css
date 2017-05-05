@@ -18,6 +18,7 @@ body {
 
 header {
   height: 64px;
+  flex-shrink: 0;
 }
 
 footer {
@@ -27,7 +28,7 @@ footer {
 main {
   flex: 1;
   display: flex;
-  flex-direction: column;
+  min-height: 100px;
   background-size: cover;
   background-position: center;
   background-image: url(../img/background.jpg);
@@ -39,13 +40,12 @@ div.panel {
   align-items: center;
   justify-content: center;
   margin: 1%;
-  height: 0px;
-  overflow: auto;
   background-color: rgba(0, 0, 0, 0.25);
 }
 
 div.panel > span {
   flex: 1;
+  display: flex;
 }
 
 /* label color */

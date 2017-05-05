@@ -20,20 +20,29 @@ function search() {
     $.ajax({
         type : "GET",
         url : "https://api.spotify.com/v1/search",
-        data : { q: query, type: "track" },
+        data : { q: query, type: "track", limit: 10 },
         async : true,
+        cache : false,
         contentType : "application/json",
         success : result => {
-            console.log(result);
-
-            var content = "<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\n";
             var tracks = result.tracks.items;
+            console.log(tracks);
+
+            var content = "<table class=\"bordered responsive-table\">\n";
             for (var i = 0; i < tracks.length; i++) {
                 content += "<tr>\n";
                 content += "<td>" + tracks[i].name + "</td>\n";
+                content += "<td>\n";
+                content += "<audio controls>\n";
+                content += "<source src=\"" + tracks[i].preview_url + "\" type=\"audio/mpeg\">\n";
+                content += "Your browser does not support the audio element.\n";
+                content += "</audio>\n";
+                content += "</td>\n";
                 content += "</tr>\n";
             }
             content += "</table>\n";
+
+            console.log(content);
 
             $("div.card-panel > span.white-text").html(content);
         }
