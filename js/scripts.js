@@ -61,7 +61,7 @@ function search() {
     $.ajax({
         type : "GET",
         url : "https://api.spotify.com/v1/search",
-        data : { q: query, type: "track", limit: 18 },
+        data : { q: query, type: "track", limit: 24 },
         async : true,
         cache : false,
         contentType : "application/json",
@@ -79,7 +79,6 @@ function search() {
                 content += "    <div class=\"card\">\n";
                 content += "        <div class=\"card-image\">\n";
                 content += "            <img src=\""+tracks[i].album.images[1].url+"\">\n";
-                // content += "            <span class=\"card-title grey darken-4\">"+tracks[i].artists[0].name + " - " +  tracks[i].name+"</span>\n";
                 content += "            <a id=\"btn"+i+"\" class=\"btn-floating halfway-fab spotify-bg\" href=\"javascript:playSound("+i+")\"><i id=\"i"+ i +"\" class=\"material-icons\">play_arrow</i></a>\n";
                 content += "        </div>\n";
                 content += "        <div class=\"card-content grey darken-4 white-text\">\n";
@@ -92,9 +91,8 @@ function search() {
                 audioMap.set(i, new Audio(tracks[i].preview_url));
             }
             content += "</div>\n";
-            // content += "</table>\n";
 
             $("div.card-panel > span").html(content);
         }
-    })
+    });
 }
