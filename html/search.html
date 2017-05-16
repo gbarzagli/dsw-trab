@@ -7,8 +7,8 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-  <link rel="stylesheet" href="./css/font-awesome.min.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -16,20 +16,20 @@
 
   <header>
       <nav>
-        <a href="index.html" class="brand"><i class="fa fa-spotify spotify-text" aria-hidden="true"></i> Spotify Catalogue</a>
+        <a href="../index.html" class="brand"><i class="fa fa-spotify spotify-text" aria-hidden="true"></i> Spotify Catalogue</a>
       </nav>
   </header>
 
   <main>
       <div class="panel">
-        <span class="white-text fullscreen">
-          <div class="row">
-            <h3>Welcome to Spotify Catalogue!</h3>
-            <p>You can search for your favorite musics on Spotify and you can also listen to a thirty seconds preview of the music.</p>
-          </div>
-          <div class="row">
-            <button class="btn spotify-bg" type="submit" onclick="redirectToSearch()">Get Started!</button>
-          </div>
+        <span class="white-text">
+          <form class="field" action="javascript:redirectToTracks()" method="GET">
+            <i class="fa fa-search icon-large" aria-hidden="true"></i>
+            <input id="main_input" type="text">
+            <button class="btn spotify-bg right" type="submit">Search
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
         </span>
       </div>
   </main>
@@ -41,14 +41,13 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        <a href="./html/about_me.html">© Gabriel Viseli Barzagli - Prontuário: 150056-2</a>
-        
+        <a href="./about_me.html">© Gabriel Viseli Barzagli - Prontuário: 150056-2</a>
       </div>
     </div>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="./js/scripts.js"></script>
+  <script src="../js/scripts.js"></script>
 </body>
 
 </html>

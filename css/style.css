@@ -47,7 +47,7 @@ nav a, a:active {
 }
 
 .brand {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .white-text {
@@ -75,7 +75,11 @@ nav a, a:active {
 }
 
 .panel span {
-  width: 100%;
+  width: 100%; 
+}
+
+.panel span.fullscreen {
+  height: 100%;
 }
 
 button.btn {
@@ -177,29 +181,96 @@ h6 {
   margin: 0.7em 0 0.5em 0;
 }
 
+.grid {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 .row {
   display: block;
   width: 100%;
 }
 
 .row .column {
-  width: 25%;
   float: left;
   box-sizing: border-box;
-  padding: 0 1em;
+  padding: 0;
   min-height: 1px;
   margin-left: auto;
   left: auto;
   right: auto;
 }
 
-table {
+.column.s1 {
+  width: 6.6666666666666666666666666666667%;
+}
+
+.column.s2 {
+  width: calc(2 * 6.6666666666666666666666666666667%);
+}
+
+.column.s3 {
+  width: calc(3 * 6.6666666666666666666666666666667%);
+}
+
+.column.s4 {
+  width: calc(4 * 6.6666666666666666666666666666667%);
+}
+
+.column.s5 {
+  width: calc(5 * 6.6666666666666666666666666666667%);
+}
+
+.column.s6 {
+  width: calc(6 * 6.6666666666666666666666666666667%);
+}
+
+.column.s7 {
+  width: calc(7 * 6.6666666666666666666666666666667%);
+}
+
+.column.s8 {
+  width: calc(8 * 6.6666666666666666666666666666667%);
+}
+
+.column.s9 {
+  width: calc(9 * 6.6666666666666666666666666666667%);
+}
+
+.column.s10 {
+  width: calc(10 * 6.6666666666666666666666666666667%);
+}
+
+.column.s11 {
+  width: calc(11 * 6.6666666666666666666666666666667%);
+}
+
+.column.s12 {
+  width: calc(12 * 6.6666666666666666666666666666667%);
+}
+
+.column.s13 {
+  width: calc(13 * 6.6666666666666666666666666666667%);
+}
+
+.column.s14 {
+  width: calc(14 * 6.6666666666666666666666666666667%);
+}
+
+.column.s15 {
+  width: calc(15 * 6.6666666666666666666666666666667%);
+}
+
+table.tracks-table {
   width: 100%;
   height: auto;
   border-spacing: 10px;
+  background-color: transparent !important;
 }
 
-table td {
+table.tracks-table td {
   padding: 0;
   width: 33.33333333333333%;
   height: 600px;
@@ -213,6 +284,12 @@ table td {
 .track-info {
   text-align: center;
   background-color: #424242;
+}
+
+table.professional-bg {
+  text-align: center;
+  border-spacing: 15px;
+  background-color: #212121;
 }
 
 .floating-btn {
@@ -239,3 +316,28 @@ table td {
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
 }
 
+.circle-img {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+footer a, a:active {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #1ED760;
+  margin-left: 15px;
+  text-decoration: none;
+}

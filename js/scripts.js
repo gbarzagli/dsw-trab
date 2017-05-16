@@ -1,9 +1,16 @@
 var audioMap = new Map();
 var lastButton = null;
 
+function redirectToSearch() {
+    window.location.href = "./html/search.html";
+}
+
+function redirectToBackground() {
+    window.location.href = "./professional_background.html";
+}
+
 /** Pega a entrada do usuario e redireciona para a página de listagem das músicas */
 function redirectToTracks() {
-    
     console.log("getting user input and redirecting to tracks page");
 
     var query = $("#main_input").val();
@@ -16,18 +23,11 @@ function redirectToTracks() {
     var regExp = new RegExp(/[!@#$%^&*()_+=-`~;'":/?.,<>]/g);
     if (regExp.test(query)) {
         alert("Não são permitidos caracteres especiais!!!");
-        document.getElementById("main_input").setCustomValidity("Invalid!");
         return;
-    } else {
-        document.getElementById("main_input").setCustomValidity("");
     }
 
     query = query.replace(/ /g, "+");
-    window.location.href = "./html/tracks.html?query=" + query;
-}
-
-function resetValidity() {
-    
+    window.location.href = "./tracks.html?query=" + query;
 }
 
 function playSound(index) {
@@ -86,7 +86,7 @@ function search() {
             var tracks = result.tracks.items;
             console.log(tracks);
             
-            var content = "<table>\n";
+            var content = "<table class=\"tracks-table\">\n";
             if (tracks.length > 0) {
                 for (var i = 0; i < tracks.length; i++) {
                     if ((i > 0 || i < 24) && i % 3 == 0) {
