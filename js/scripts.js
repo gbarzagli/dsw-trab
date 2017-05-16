@@ -3,14 +3,31 @@ var lastButton = null;
 
 /** Pega a entrada do usuario e redireciona para a página de listagem das músicas */
 function redirectToTracks() {
+    
     console.log("getting user input and redirecting to tracks page");
 
     var query = $("#main_input").val();
     if (query == undefined || query == '') {
-        query = $("#nav_input").val();
+        alert("Digite algo para pesquisar!");
+        return;
     }
 
+    
+    var regExp = new RegExp(/[!@#$%^&*()_+=-`~;'":/?.,<>]/g);
+    if (regExp.test(query)) {
+        alert("Não são permitidos caracteres especiais!!!");
+        document.getElementById("main_input").setCustomValidity("Invalid!");
+        return;
+    } else {
+        document.getElementById("main_input").setCustomValidity("");
+    }
+
+    query = query.replace(/ /g, "+");
     window.location.href = "./html/tracks.html?query=" + query;
+}
+
+function resetValidity() {
+    
 }
 
 function playSound(index) {
@@ -69,30 +86,33 @@ function search() {
             var tracks = result.tracks.items;
             console.log(tracks);
             
-            var content = "<div class=\"row\">\n";
-            for (var i = 0; i < tracks.length; i++) {
-                if ((i > 0 || i < 24) && i % 6 == 0) {
-                    content += "</div>\n";
-                    content += "<div class=\"row\">\n";
+            var content = "<table>\n";
+            if (tracks.length > 0) {
+                for (var i = 0; i < tracks.length; i++) {
+                    if ((i > 0 || i < 24) && i % 3 == 0) {
+                        content += "</tr>\n";
+                        content += "<tr>\n";
+                    }
+                    content += "<td>\n";
+                    content += "    <div class=\"track-image\">\n";
+                    content += "        <img src=\""+tracks[i].album.images[1].url+"\">\n";
+                    content += "    </div>\n";
+                    content += "    <div class=\"track-info\">\n";
+                    content += "        <a id=\"btn"+i+"\" class=\"floating-btn spotify-bg\" href=\"javascript:playSound("+i+")\"><i id=\"i"+ i +"\" class=\"material-icons\">play_arrow</i></a>\n";
+                    content += "        <p><strong>"+tracks[i].artists[0].name + " - " +  tracks[i].name+"</strong></p>\n";
+                    content += "    </div>\n";
+                    content += "</td>\n";
+
+                    // add to array
+                    audioMap.set(i, new Audio(tracks[i].preview_url));
                 }
-                content += "<div class=\"col s12 m6 l4\">\n";
-                content += "    <div class=\"card\">\n";
-                content += "        <div class=\"card-image\">\n";
-                content += "            <img src=\""+tracks[i].album.images[1].url+"\">\n";
-                content += "            <a id=\"btn"+i+"\" class=\"btn-floating halfway-fab spotify-bg\" href=\"javascript:playSound("+i+")\"><i id=\"i"+ i +"\" class=\"material-icons\">play_arrow</i></a>\n";
-                content += "        </div>\n";
-                content += "        <div class=\"card-content grey darken-4 white-text\">\n";
-                content += "            <p><strong>"+tracks[i].artists[0].name + " - " +  tracks[i].name+"</strong></p>\n";
-                content += "        </div>\n";
-                content += "    </div>\n";
-                content += "</div>\n";
-
-                // add to array
-                audioMap.set(i, new Audio(tracks[i].preview_url));
+            } else {
+                alert("Não há resultados para a busca realizada!");
+                window.location.href = "../index.html";
             }
-            content += "</div>\n";
+            content += "</table>\n";
 
-            $("div.card-panel > span").html(content);
+            $("div.panel > span").html(content);
         }
     });
 }

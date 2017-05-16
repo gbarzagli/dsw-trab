@@ -1,27 +1,13 @@
-.logo {
-  width: 40px;
-  height: 40px;
-  position: relative;
-  transform: translateY(20%);
-}
-
-html, body, {
-  height: 100%;
-}
-
-body {
-  background-color: #f5f5f5;
+html, body {
+  margin: 0;
+  width: 100%;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
-  height: 64px;
-  flex-shrink: 0;
-}
-
-footer {
   flex-shrink: 0;
 }
 
@@ -34,55 +20,222 @@ main {
   background-image: url(../img/background.jpg);
 }
 
-div.panel {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1%;
-  background-color: rgba(0, 0, 0, 0.25);
+footer {
+  flex-shrink: 0;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: #f5f5f5;
+  background-color: #212121;
 }
 
-div.panel > span {
-  flex: 1;
+footer > div.footer-copyright {
+  padding-top: 1%;
+  border-top: 1px solid rgba(255, 255, 255, 0.5)
 }
 
-/* label color */
-.input-field label {
- color: #fff;
+nav {
+  width: 100%;
+  background-color: #212121;
 }
-/* label focus color */
-.input-field input[type=text]:focus + label {
- color: #fff;
+
+nav a, a:active {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
 }
-/* label underline focus color */
-.input-field input[type=text]:focus {
- border-bottom: 1px solid #1ED760;
- box-shadow: 0 1px 0 0 #1ED760;
+
+.brand {
+  font-size: 3em;
 }
-/* valid color */
-.input-field input[type=text].valid {
- border-bottom: 1px solid #1ED760;
- box-shadow: 0 1px 0 0 #1ED760;
+
+.white-text {
+  color: white;
 }
-/* invalid color */
-.input-field input[type=text].invalid {
- border-bottom: 1px solid #1ED760;
- box-shadow: 0 1px 0 0 #1ED760;
-}
-/* icon prefix focus color */
-.input-field .prefix.active {
- color: #1ED760;
+
+.spotify-text {
+  color: #1ED760;
 }
 
 .spotify-bg {
  background-color: #1ED760;
 }
 
-.spotify-bg:focus {
- background-color: #1ED760;
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+  margin: 1%;
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
-.spotify-bg:hover {
- background-color: #1ED760;
+.panel span {
+  width: 100%;
 }
+
+button.btn {
+  border: 0;
+  padding: 10px;
+  display: block;
+  font-size: 1.5em;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+}
+
+button.btn:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+}
+
+button.btn:active {
+  color: white;
+}
+
+button .btn:active, .btn:focus {
+  outline: none;
+}
+
+i.icon-large {
+  font-size: 1.7em;
+  margin-right: 5px;
+}
+
+form.field {
+  display: block;
+}
+
+form.field i {
+  display: inline-block;
+}
+
+form.field input {
+  width: 97% !important;
+}
+
+form.field button {
+  float: right;
+  margin-right: 20px;
+}
+
+input[type=text] {
+  height: 3em;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 10px;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+}
+
+input[type=text]:focus {
+  border-bottom: 1px solid #1ED760;
+}
+
+input[type=text]:invalid {
+  border-bottom: 1px solid red;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 4em;
+  margin: 1.9em 0 1.7em 0;
+}
+
+h2 {
+  font-size: 3.5em;
+  margin: 1.7em 0 1.5em 0;
+}
+
+h3 {
+  font-size: 3em;
+  margin: 1.5em 0 1.1em 0;
+}
+
+h4 {
+  font-size: 2em;
+  margin: 1.1em 0 0.9em 0;
+}
+
+h5 {
+  font-size: 1.5em;
+  margin: 0.9em 0 0.7em 0;
+}
+
+h6 {
+  font-size: 1em;
+  margin: 0.7em 0 0.5em 0;
+}
+
+.row {
+  display: block;
+  width: 100%;
+}
+
+.row .column {
+  width: 25%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 1em;
+  min-height: 1px;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+
+table {
+  width: 100%;
+  height: auto;
+  border-spacing: 10px;
+}
+
+table td {
+  padding: 0;
+  width: 33.33333333333333%;
+  height: 600px;
+}
+
+.track-image > img {
+  width: 100%;
+  height: auto;
+}
+
+.track-info {
+  text-align: center;
+  background-color: #424242;
+}
+
+.floating-btn {
+  left: 7em;
+  top: -0.7em;
+  z-index: 1;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  color: white;
+  transition: .3s;
+  font-size: 2rem;
+  line-height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  line-height: inherit;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.floating-btn:hover {
+  transition: box-shadow .25s;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+}
+
